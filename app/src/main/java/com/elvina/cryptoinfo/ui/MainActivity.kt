@@ -10,8 +10,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.elvina.cryptoinfo.ui.detail_screen.DetailScreen
+import com.elvina.cryptoinfo.ui.main_screen.MainScreen
 import com.elvina.cryptoinfo.ui.theme.CryptoInfoTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,27 +27,27 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
+                    color = MaterialTheme.colorScheme.background)
+					{
+						val navController = rememberNavController()
+						NavHost(
+							navController = navController,
+							startDestination = Screen.MainScreen.route
+						){
+							composable(
+								route = Screen.MainScreen.route
+							){
+								MainScreen(navController)
+							}
+							composable(
+								route = Screen.DetailScreen.route + "/{coinId}"
+							){
+								DetailScreen()
+							}
+						}
+
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CryptoInfoTheme {
-        Greeting("Android")
     }
 }
