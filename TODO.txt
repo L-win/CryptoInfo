@@ -1,2 +1,2 @@
-- rename main_screen contents to "MainScreen.."
-- rename detail_screen contents to "DetailScreen.."
+- limit list items on MainScreen
+- change UI design

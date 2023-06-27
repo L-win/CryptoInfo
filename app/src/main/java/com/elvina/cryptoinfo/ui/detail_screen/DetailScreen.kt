@@ -30,7 +30,7 @@ import com.google.accompanist.flowlayout.FlowRow
 
 @Composable
 fun DetailScreen(
-	viewModel: CoinDetailViewModel = hiltViewModel()
+	viewModel: DetailScreenViewModel = hiltViewModel()
 ){
 	val state = viewModel.state.value
 	Box(modifier = Modifier.fillMaxSize()){

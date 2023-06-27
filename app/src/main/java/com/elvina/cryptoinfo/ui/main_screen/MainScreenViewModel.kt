@@ -6,18 +6,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.elvina.cryptoinfo.domain.use_cases.get_all_coins.GetAllCoinsUseCase
 import com.elvina.cryptoinfo.other.Resource
-import com.elvina.cryptoinfo.ui.main_screen.CoinListState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 @HiltViewModel
-class CoinListViewModel @Inject constructor(
+class MainScreenViewModel @Inject constructor(
     private val getCoinsUseCase: GetAllCoinsUseCase
 ): ViewModel(){
-    private val _state = mutableStateOf(CoinListState())
-    val state: State<CoinListState> = _state
+    private val _state = mutableStateOf(MainScreenState())
+    val state: State<MainScreenState> = _state
 
     init{
         getCoins()
@@ -27,15 +26,15 @@ class CoinListViewModel @Inject constructor(
         getCoinsUseCase().onEach { result->
             when(result){
                 is Resource.Success->{
-                    _state.value = CoinListState(coins = result.data ?: emptyList())
+                    _state.value = MainScreenState(coins = result.data ?: emptyList())
                 }
                 is Resource.Error->{
-                    _state.value = CoinListState(
+                    _state.value = MainScreenState(
                         error = result.message ?: "An uexpected error occured"
                     )
                 }
                 is Resource.Loading->{
-                    _state.value = CoinListState(isLoading = true)
+                    _state.value = MainScreenState(isLoading = true)
                 }
             }
         }.launchIn(viewModelScope)
