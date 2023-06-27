@@ -1,6 +1,6 @@
 package com.elvina.cryptoinfo.domain.model
 
-import com.elvina.cryptoinfo.data.remote.dto.Team
+import com.elvina.cryptoinfo.data.remote.dto.TeamMember
 
 data class CoinDetail(
     val coinId: String,
@@ -10,5 +10,5 @@ data class CoinDetail(
     val rank: Int,
     val is_active: Boolean,
     val tags: List<String>,
-    val team: List<Team>
+    val team: List<TeamMember>
 )

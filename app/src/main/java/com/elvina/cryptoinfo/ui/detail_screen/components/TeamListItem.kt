@@ -10,12 +10,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
-import com.elvina.cryptoinfo.data.remote.dto.Team
+import com.elvina.cryptoinfo.data.remote.dto.TeamMember
 
 
 @Composable
 fun TeamListItem(
-    team: Team,
+    teamMember: TeamMember,
     modifier: Modifier = Modifier
 ){
     Column (
@@ -23,12 +23,12 @@ fun TeamListItem(
         verticalArrangement = Arrangement.Center
     ){
         Text(
-            text = team.name,
+            text = teamMember.name,
             style = MaterialTheme.typography.bodyMedium
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
-            text = team.position,
+            text = teamMember.position,
             style = MaterialTheme.typography.bodySmall,
             fontStyle = FontStyle.Italic
         )

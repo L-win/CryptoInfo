@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
@@ -83,9 +84,9 @@ fun DetailScreen(
 					Spacer(modifier = Modifier.height(15.dp))
 				}
 				items(coin.team){
-					team ->
+					teamMember ->
 					TeamListItem(
-						team = team,
+						teamMember = teamMember,
 						modifier = Modifier.fillMaxWidth().padding(10.dp)
 					)
 					Divider()
