@@ -45,7 +45,7 @@ fun DetailScreen(
 					){
 						Text(
 							text = "${coin.rank}. ${coin.name}(${coin.symbol})",
-							style = MaterialTheme.typography.h2,
+							style = MaterialTheme.typography.bodyLarge,
 							modifier = Modifier.weight(8f)
 						)
 						Text(
@@ -59,12 +59,12 @@ fun DetailScreen(
 					Spacer(modifier = Modifier.height(15.dp))
 					Text(
 						text = coin.description,
-						style = MaterialTheme.typography.body2
+						style = MaterialTheme.typography.bodyMedium
 					)
 					Spacer(modifier = Modifier.height(15.dp))
 					Text(
 						text = "Tags",
-						style = MaterialTheme.typography.h3
+						style = MaterialTheme.typography.bodySmall
 					)
 					Spacer(modifier = Modifier.height(15.dp))
 					FlowRow(
@@ -78,7 +78,7 @@ fun DetailScreen(
 					Spacer(modifier = Modifier.height(15.dp))
 					Text(
 						text= "Team members",
-						style = MaterialTheme.typography.h3
+						style = MaterialTheme.typography.bodySmall
 					)
 					Spacer(modifier = Modifier.height(15.dp))
 				}
