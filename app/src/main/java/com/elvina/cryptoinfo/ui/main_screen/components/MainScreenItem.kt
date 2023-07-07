@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -27,10 +28,12 @@ fun MainScreenItem(
 ){
     Card(
         modifier =  Modifier.fillMaxWidth().clickable {onItemClick(coin)}.padding(10.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 10.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
+        border = null,
+        shape = RoundedCornerShape(5.dp)
     ) {
         Column(
-            modifier = Modifier.padding(10.dp)
+            modifier = Modifier.padding(15.dp)
         ) {
             Text(
             text = "${coin.rank}. ${coin.name} ${coin.symbol}",
