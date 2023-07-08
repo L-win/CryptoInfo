@@ -27,6 +27,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -47,7 +49,7 @@ fun MainScreen(
             topBar = {
                 TopAppBar(
                     title = {
-                        Text(text = "Top App Bar")
+                        Text(text = "CryptoInfo")
                     },
                     navigationIcon = {
                         IconButton(onClick = {}) {
@@ -55,22 +57,17 @@ fun MainScreen(
                         }
                     },
                     colors = TopAppBarDefaults.smallTopAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.primary,
-                        titleContentColor = Color.White,
+                        containerColor = MaterialTheme.colorScheme.background,
+                        titleContentColor = MaterialTheme.colorScheme.secondary,
                     ),
                 )
             }, content = {
-                Column(
-                    modifier = Modifier
-                        .padding(it)
-                        .fillMaxSize()
-                        .background(Color(0xff8d6e63)),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
 
                     LazyColumn(
-                        modifier = Modifier.fillMaxSize()
+                        modifier = Modifier
+                            .padding(it)
+                            .fillMaxSize()
+                            .background(MaterialTheme.colorScheme.background),
                     ){
 
                         items(state.coins){
@@ -85,14 +82,16 @@ fun MainScreen(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(horizontal = 20.dp)
-//                                .align(Alignment.Center)
+                                .align(Alignment.Center)
                         )
                     }
                     if(state.isLoading){
-                        CircularProgressIndicator()
+                        CircularProgressIndicator(
+                            modifier = Modifier
+                                .padding(20.dp)
+                                .align(Alignment.Center))
                     }
 
-                }
             })
 
     }

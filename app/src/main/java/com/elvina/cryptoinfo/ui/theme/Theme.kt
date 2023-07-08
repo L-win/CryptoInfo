@@ -13,18 +13,31 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+
+    tertiary = Pink80,
+
+    // Text
+    secondary = WHITE,
+
+    // App background
+    background = BLACK,
+
+    // Card background
+    //surface =
+
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    secondary = BLACK,
+    tertiary = Pink40,
+
+    background = WHITE
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
