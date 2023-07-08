@@ -1,7 +1,7 @@
 # CryptoInfo
 
 ## All
-- [ ] limit list items on MainScreen
+- [x] limit list items on MainScreen
 - [ ] change UI:
   - [ ] main screen
   - [ ] detail screen

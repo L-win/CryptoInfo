@@ -62,38 +62,34 @@ fun MainScreen(
                     ),
                 )
             }, content = {
-
-                    LazyColumn(
+                LazyColumn(
+                    modifier = Modifier
+                        .padding(it)
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.background),
+                ){
+                    items(state.coins){
+                            coin -> MainScreenItem( coin = coin, onItemClick = {navController.navigate(Screen.DetailScreen.route + "/${coin.id}")} )
+                    }
+                }
+                if(state.error.isNotBlank()){
+                    Text(
+                        text = state.error,
+                        color = Color.Red,
+                        textAlign = TextAlign.Center,
                         modifier = Modifier
-                            .padding(it)
-                            .fillMaxSize()
-                            .background(MaterialTheme.colorScheme.background),
-                    ){
-
-                        items(state.coins){
-                                coin -> MainScreenItem( coin = coin, onItemClick = {navController.navigate(Screen.DetailScreen.route + "/${coin.id}")} )
-                        }
-                    }
-                    if(state.error.isNotBlank()){
-                        Text(
-                            text = state.error,
-                            color = Color.Red,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(horizontal = 20.dp)
-                                .align(Alignment.Center)
-                        )
-                    }
-                    if(state.isLoading){
-                        CircularProgressIndicator(
-                            modifier = Modifier
-                                .padding(20.dp)
-                                .align(Alignment.Center))
-                    }
-
+                            .fillMaxWidth()
+                            .padding(horizontal = 20.dp)
+                            .align(Alignment.Center)
+                    )
+                }
+                if(state.isLoading){
+                    CircularProgressIndicator(
+                        modifier = Modifier
+                            .padding(20.dp)
+                            .align(Alignment.Center))
+                }
             })
-
     }
 
 }

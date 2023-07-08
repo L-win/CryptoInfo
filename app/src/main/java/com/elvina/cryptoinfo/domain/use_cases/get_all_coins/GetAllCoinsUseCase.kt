@@ -18,7 +18,7 @@ class GetAllCoinsUseCase @Inject constructor(
         try {
             emit(Resource.Loading())
             val coins = repository.getCoins().map { it.toCoin() }
-            emit(Resource.Success(coins))
+            emit(Resource.Success(coins.subList(0,15)))
         }catch(e: HttpException){
             emit(Resource.Error(e.localizedMessage ?: "An error occured"))
         }catch (e: IOException){
