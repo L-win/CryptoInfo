@@ -40,56 +40,63 @@ import com.elvina.cryptoinfo.ui.main_screen.components.MainScreenItem
 fun MainScreen(
     navController: NavController,
     viewModel: MainScreenViewModel = hiltViewModel()
-){
+) {
     val state = viewModel.state.value
-    Box(
-        modifier = Modifier.fillMaxSize()
-    ){
-        Scaffold(
-            topBar = {
-                TopAppBar(
-                    title = {
-                        Text(text = "CryptoInfo")
-                    },
-                    navigationIcon = {
-                        IconButton(onClick = {}) {
-                            Icon(Icons.Filled.ArrowBack, "backIcon")
-                        }
-                    },
-                    colors = TopAppBarDefaults.smallTopAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.background,
-                        titleContentColor = MaterialTheme.colorScheme.secondary,
-                    ),
-                )
-            }, content = {
-                LazyColumn(
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(text = "CryptoInfo")
+                },
+                navigationIcon = {
+                    IconButton(onClick = {}) {
+                        Icon(Icons.Filled.ArrowBack, "backIcon")
+                    }
+                },
+                colors = TopAppBarDefaults.smallTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.background,
+                    titleContentColor = MaterialTheme.colorScheme.secondary,
+                ),
+            )
+        }
+    ) {
+        Box(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            if (state.isLoading) {
+                CircularProgressIndicator(
                     modifier = Modifier
                         .padding(it)
-                        .fillMaxSize()
-                        .background(MaterialTheme.colorScheme.background),
-                ){
-                    items(state.coins){
-                            coin -> MainScreenItem( coin = coin, onItemClick = {navController.navigate(Screen.DetailScreen.route + "/${coin.id}")} )
-                    }
+                        .align(Alignment.Center)
+                )
+            }
+
+            if (state.error.isNotBlank()) {
+                Text(
+                    text = state.error,
+                    color = Color.Red,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(it)
+                        .align(Alignment.Center)
+                )
+            }
+
+
+            LazyColumn(
+                contentPadding = it
+            ) {
+                items(state.coins) { coin ->
+                    MainScreenItem(
+                        coin = coin,
+                        onItemClick = { navController.navigate(Screen.DetailScreen.route + "/${coin.id}") })
                 }
-                if(state.error.isNotBlank()){
-                    Text(
-                        text = state.error,
-                        color = Color.Red,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 20.dp)
-                            .align(Alignment.Center)
-                    )
-                }
-                if(state.isLoading){
-                    CircularProgressIndicator(
-                        modifier = Modifier
-                            .padding(20.dp)
-                            .align(Alignment.Center))
-                }
-            })
+            }
+        }
+
+
     }
 
 }
