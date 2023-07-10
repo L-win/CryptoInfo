@@ -6,6 +6,7 @@
 - [ ] change UI:
   - [ ] main screen
   - [ ] detail screen
+    - [ ] remove tags
 - [ ] create new AboutScreen
 - [ ] add README.md
   - [ ] add screenshots

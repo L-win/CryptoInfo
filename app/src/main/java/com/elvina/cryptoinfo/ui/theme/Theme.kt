@@ -17,27 +17,29 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
-    primary = BLACK2,
-
-    tertiary = Pink80,
+    primary = GRAY,
 
     // Text
     secondary = WHITE,
+    onPrimary = WHITE,
 
     // App background
     background = BLACK,
 
     // Card background
-    //surface =
+    surface = BLACK2,
+
+    tertiary = Pink80,
 
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = BLUE,
+    onPrimary = WHITE,
     secondary = BLACK,
     tertiary = Pink40,
-
-    background = WHITE
+    background = WHITE,
+    surface = WHITE
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
