@@ -98,11 +98,7 @@ fun DetailScreen(
 				text = state.error,
 				color = Color.Red,
 				textAlign = TextAlign.Center,
-				modifier =
-					Modifier
-					.fillMaxWidth()
-					.padding(horizontal = 20.dp)
-					.align(Alignment.Center)
+				modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp).align(Alignment.Center)
 			)
 		}
 		if(state.isLoading){
