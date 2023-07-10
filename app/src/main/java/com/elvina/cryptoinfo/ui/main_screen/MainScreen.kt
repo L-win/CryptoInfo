@@ -60,11 +60,13 @@ fun MainScreen(
         }
     ) {
         Box(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .padding(it)
+                .fillMaxSize()
         ) {
             if (state.isLoading) {
                 CircularProgressIndicator(
-                    modifier = Modifier.padding(it).align(Alignment.Center),
+                    modifier = Modifier.align(Alignment.Center),
                     color = MaterialTheme.colorScheme.secondary
                 )
             }
@@ -74,13 +76,13 @@ fun MainScreen(
                     text = state.error,
                     color = Color.Red,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth().padding(it).align(Alignment.Center)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.Center)
                 )
             }
 
-            LazyColumn(
-                contentPadding = it
-            ) {
+            LazyColumn() {
                 items(state.coins) { coin ->
                     MainScreenItem(
                         coin = coin,

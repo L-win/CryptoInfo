@@ -40,7 +40,7 @@ fun MainScreenItem(
             modifier = Modifier.padding(20.dp)
         ) {
             Text(
-                text = "${coin.rank}.  ${coin.symbol} - ${coin.name} ",
+                text = "${coin.rank}  ${coin.symbol} - ${coin.name}",
                 style = MaterialTheme.typography.bodyMedium,
                 overflow = TextOverflow.Ellipsis
             )
