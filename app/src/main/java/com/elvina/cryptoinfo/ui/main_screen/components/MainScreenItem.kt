@@ -41,14 +41,14 @@ fun MainScreenItem(
             style = MaterialTheme.typography.bodyMedium,
             overflow = TextOverflow.Ellipsis
         )
-            Text(
-            text = if(coin.is_active) "active" else "inactive",
-            color = if(coin.is_active) Color.Magenta else Color.Red,
-            fontStyle = FontStyle.Italic,
-            textAlign = TextAlign.End,
-            style = MaterialTheme.typography.bodySmall,
-//            modifier = Modifier.align(CenterVertically)
-        )
+//            Text(
+//            text = if(coin.is_active) "active" else "inactive",
+//            color = if(coin.is_active) Color.Magenta else Color.Red,
+//            fontStyle = FontStyle.Italic,
+//            textAlign = TextAlign.End,
+//            style = MaterialTheme.typography.bodySmall,
+////            modifier = Modifier.align(CenterVertically)
+//        )
         }
     }
 
