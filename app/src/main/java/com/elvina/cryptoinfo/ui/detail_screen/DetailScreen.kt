@@ -17,16 +17,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.elvina.cryptoinfo.ui.detail_screen.components.CoinTag
 import com.elvina.cryptoinfo.ui.detail_screen.components.TeamListItem
-import com.google.accompanist.flowlayout.FlowRow
 
 @Composable
 fun DetailScreen(
@@ -45,18 +43,17 @@ fun DetailScreen(
 						horizontalArrangement = Arrangement.SpaceBetween
 					){
 						Text(
-							text = "${coin.rank}. ${coin.name}(${coin.symbol})",
+							text = "${coin.rank}  ${coin.symbol} - ${coin.name}",
 							style = MaterialTheme.typography.bodyLarge,
 							modifier = Modifier.weight(8f)
 						)
-						Text(
-							text = if(coin.is_active) "active" else "inactive",
-							color = if(coin.is_active) Color.Green else Color.Red,
-							fontStyle = FontStyle.Italic,
-							textAlign = TextAlign.End,
-							modifier = Modifier.align(CenterVertically).weight(2f)
-						)
 					}
+					Spacer(modifier = Modifier.height(15.dp))
+					Text(
+						text="Description",
+						fontSize = 16.sp,
+						fontWeight = FontWeight(12)
+					)
 					Spacer(modifier = Modifier.height(15.dp))
 					Text(
 						text = coin.description,
@@ -64,22 +61,9 @@ fun DetailScreen(
 					)
 					Spacer(modifier = Modifier.height(15.dp))
 					Text(
-						text = "Tags",
-						style = MaterialTheme.typography.bodySmall
-					)
-					Spacer(modifier = Modifier.height(15.dp))
-					FlowRow(
-						modifier = Modifier.fillMaxWidth()
-					){
-						coin.tags.forEach{
-							tag ->
-							CoinTag(tag = tag)
-						}
-					}
-					Spacer(modifier = Modifier.height(15.dp))
-					Text(
-						text= "Team members",
-						style = MaterialTheme.typography.bodySmall
+						text= "Creators",
+						fontSize = 16.sp,
+						fontWeight = FontWeight(12)
 					)
 					Spacer(modifier = Modifier.height(15.dp))
 				}
