@@ -7,7 +7,9 @@
   - [ ] main screen
   - [ ] detail screen
     - [ ] remove tags
+    - [ ] add appBar
 - [ ] create new AboutScreen
 - [ ] add README.md
   - [ ] add screenshots
   - [ ] add stack(MVVM, Api, Retrofit, DI, Compose)
+- [ ] create search feature
