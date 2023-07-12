@@ -1,5 +1,6 @@
 package com.elvina.cryptoinfo.ui.main_screen
 
+import androidx.compose.animation.core.FiniteAnimationSpec
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth

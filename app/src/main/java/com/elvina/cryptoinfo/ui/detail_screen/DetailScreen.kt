@@ -1,5 +1,8 @@
 package com.elvina.cryptoinfo.ui.detail_screen
 
+import android.util.Log
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -39,11 +42,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import coil.compose.AsyncImage
 import com.elvina.cryptoinfo.ui.Screen
 import com.elvina.cryptoinfo.ui.detail_screen.components.TeamListItem
 import java.time.format.TextStyle
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun DetailScreen(
     navController: NavController,
@@ -51,6 +55,10 @@ fun DetailScreen(
 
 ) {
     val state = viewModel.state.value
+
+    println("TEST: " + state.coin?.logo)
+    println("TEST: " + state.coin?.started_at)
+//    println()
 
     Scaffold(
         topBar = {
@@ -83,23 +91,43 @@ fun DetailScreen(
         ) {
             state.coin?.let { coin ->
                 LazyColumn(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .wrapContentHeight(),
+
                     contentPadding = PaddingValues(10.dp)
                 ) {
                     item {
+
+                        // Logo
+                        Spacer(modifier = Modifier.height(15.dp))
                         Row(
-                            modifier = Modifier.fillMaxWidth().padding(top=15.dp),
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            AsyncImage(
+                                model = "${coin.logo}",
+                                contentDescription = null,
+                            )
+                        }
+
+                        // Title
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 15.dp),
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
                             Text(
                                 text = "${coin.name}, ${coin.symbol}",
-//                                style = MaterialTheme.typography.bodyLarge,
                                 modifier = Modifier.weight(16f),
                                 fontSize = 22.sp,
                                 fontWeight = FontWeight.Bold,
                                 textAlign = TextAlign.Center,
                             )
                         }
+
+
+                        // Description
                         Spacer(modifier = Modifier.height(15.dp))
                         Text(
                             text = "Description",
@@ -136,6 +164,7 @@ fun DetailScreen(
                         Divider()
                     }
                 }
+
             }
             if (state.error.isNotBlank()) {
                 Text(
