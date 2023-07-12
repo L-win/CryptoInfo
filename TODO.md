@@ -1,13 +1,16 @@
 # CryptoInfo
 
 ## All
-- [x] limit list items on MainScreen
-- [x] fix progressbar on MainScreen
+- [x] ~limit list items on MainScreen
+- [x] ~fix progressbar on MainScreen
 - [ ] change UI:
   - [ ] main screen
   - [ ] detail screen
-    - [ ] remove tags
+    - [x] ~remove tags
+	- [x] ~remove "active"
     - [ ] add appBar
+    - [ ] use Card
+    - [ ] show more information
 - [ ] create new AboutScreen
 - [ ] add README.md
   - [ ] add screenshots

@@ -107,7 +107,7 @@ fun MainScreen(
                 items(state.coins) { coin ->
                     MainScreenItem(
                         coin = coin,
-                        onItemClick = { navController.navigate(Screen.DetailScreen.route + "/${coin.id}") }
+                        onItemClick = { navController.navigate(Screen.DetailScreen.route + "/${coin.id}" + "/${coin.symbol}") }
                     )
                 }
             }

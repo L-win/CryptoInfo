@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
 								MainScreen(navController)
 							}
 							composable(
-								route = Screen.DetailScreen.route + "/{coinId}"
+								route = Screen.DetailScreen.route + "/{coinId}" + "/{coinSymbol}"
 							){
 								DetailScreen()
 							}

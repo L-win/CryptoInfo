@@ -28,68 +28,75 @@ import com.elvina.cryptoinfo.ui.detail_screen.components.TeamListItem
 
 @Composable
 fun DetailScreen(
-	viewModel: DetailScreenViewModel = hiltViewModel()
-){
-	val state = viewModel.state.value
-	Box(modifier = Modifier.fillMaxSize()){
-		state.coin?.let {
-			coin -> LazyColumn(
-				modifier = Modifier.fillMaxSize(),
-				contentPadding = PaddingValues(20.dp)
-			){
-				item{
-					Row(
-						modifier = Modifier.fillMaxWidth(),
-						horizontalArrangement = Arrangement.SpaceBetween
-					){
-						Text(
-							text = "${coin.rank}  ${coin.symbol} - ${coin.name}",
-							style = MaterialTheme.typography.bodyLarge,
-							modifier = Modifier.weight(8f)
-						)
-					}
-					Spacer(modifier = Modifier.height(15.dp))
-					Text(
-						text="Description",
-						fontSize = 16.sp,
-						fontWeight = FontWeight(12)
-					)
-					Spacer(modifier = Modifier.height(15.dp))
-					Text(
-						text = coin.description,
-						style = MaterialTheme.typography.bodyMedium
-					)
-					Spacer(modifier = Modifier.height(15.dp))
-					Text(
-						text= "Creators",
-						fontSize = 16.sp,
-						fontWeight = FontWeight(12)
-					)
-					Spacer(modifier = Modifier.height(15.dp))
-				}
-				items(coin.team){
-					teamMember ->
-					TeamListItem(
-						teamMember = teamMember,
-						modifier = Modifier.fillMaxWidth().padding(10.dp)
-					)
-					Divider()
-				}
-			}
-		}
-		if (state.error.isNotBlank()){
-			Text(
-				text = state.error,
-				color = Color.Red,
-				textAlign = TextAlign.Center,
-				modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp).align(Alignment.Center)
-			)
-		}
-		if(state.isLoading){
-			CircularProgressIndicator(
-				modifier = Modifier.align(Alignment.Center),
-				color = MaterialTheme.colorScheme.secondary
-			)
-		}
-	}
+    viewModel: DetailScreenViewModel = hiltViewModel()
+) {
+    val state = viewModel.state.value
+
+    println("COIN SYMBOL : "+state.coinSymbol)
+
+    Box(modifier = Modifier.fillMaxSize()) {
+        state.coin?.let { coin ->
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(20.dp)
+            ) {
+                item {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(
+                            text = "${coin.rank}  ${coin.symbol} - ${coin.name}",
+                            style = MaterialTheme.typography.bodyLarge,
+                            modifier = Modifier.weight(8f)
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(15.dp))
+                    Text(
+                        text = "Description",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight(12)
+                    )
+                    Spacer(modifier = Modifier.height(15.dp))
+                    Text(
+                        text = coin.description,
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    Spacer(modifier = Modifier.height(15.dp))
+                    Text(
+                        text = "Creators",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight(12)
+                    )
+                    Spacer(modifier = Modifier.height(15.dp))
+                }
+                items(coin.team) { teamMember ->
+                    TeamListItem(
+                        teamMember = teamMember,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp)
+                    )
+                    Divider()
+                }
+            }
+        }
+        if (state.error.isNotBlank()) {
+            Text(
+                text = state.error,
+                color = Color.Red,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp)
+                    .align(Alignment.Center)
+            )
+        }
+        if (state.isLoading) {
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center),
+                color = MaterialTheme.colorScheme.secondary
+            )
+        }
+    }
 }
