@@ -8,7 +8,7 @@
   - [ ] detail screen
     - [x] ~remove tags
 	- [x] ~remove "active"
-    - [ ] add appBar
+    - [x] ~add appBar
     - [ ] use Card
     - [ ] show more information
 - [ ] create new AboutScreen
