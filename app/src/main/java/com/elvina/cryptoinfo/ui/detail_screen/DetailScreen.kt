@@ -1,10 +1,7 @@
 package com.elvina.cryptoinfo.ui.detail_screen
 
-import android.util.Log
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -33,9 +30,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -44,8 +39,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.elvina.cryptoinfo.ui.Screen
+import com.elvina.cryptoinfo.ui.detail_screen.components.DetailExtra
 import com.elvina.cryptoinfo.ui.detail_screen.components.TeamListItem
-import java.time.format.TextStyle
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
@@ -55,10 +50,6 @@ fun DetailScreen(
 
 ) {
     val state = viewModel.state.value
-
-    println("TEST: " + state.coin?.logo)
-    println("TEST: " + state.coin?.started_at)
-//    println()
 
     Scaffold(
         topBar = {
@@ -98,7 +89,7 @@ fun DetailScreen(
                 ) {
                     item {
 
-                        // Logo
+                        /* Logo */
                         Spacer(modifier = Modifier.height(15.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
@@ -110,7 +101,7 @@ fun DetailScreen(
                             )
                         }
 
-                        // Title
+                        /* Title */
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -126,8 +117,7 @@ fun DetailScreen(
                             )
                         }
 
-
-                        // Description
+                        /* Description */
                         Spacer(modifier = Modifier.height(15.dp))
                         Text(
                             text = "Description",
@@ -146,7 +136,10 @@ fun DetailScreen(
                             style = MaterialTheme.typography.bodyMedium
                         )
 
-                        // Creators
+                        /* Extra information */
+                        DetailExtra(coin = coin)
+
+                        /* Creators list */
                         Spacer(modifier = Modifier.height(15.dp))
                         Text(
                             text = "Creators",

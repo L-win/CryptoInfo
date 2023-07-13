@@ -29,7 +29,7 @@ data class CoinDetailDto(
     val whitepaper: Whitepaper
 )
 
-fun CoinDetailDto.toCoinDetail(): CoinDetail{
+fun CoinDetailDto.toCoinDetail(): CoinDetail {
     return CoinDetail(
         coinId = id,
         name = name,
@@ -37,9 +37,15 @@ fun CoinDetailDto.toCoinDetail(): CoinDetail{
         symbol = symbol,
         rank = rank,
         is_active = is_active,
-        tags = tags.map{it.name},
+        tags = tags.map { it.name },
         team = team,
+
         started_at = started_at,
-        logo = logo
+        logo = logo,
+        open_source = open_source,
+        hash = hash_algorithm,
+        proof = proof_type,
+        organization = org_structure
+
     )
 }
