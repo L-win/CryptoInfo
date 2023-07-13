@@ -145,6 +145,8 @@ fun DetailScreen(
                             text = coin.description,
                             style = MaterialTheme.typography.bodyMedium
                         )
+
+                        // Creators
                         Spacer(modifier = Modifier.height(15.dp))
                         Text(
                             text = "Creators",
