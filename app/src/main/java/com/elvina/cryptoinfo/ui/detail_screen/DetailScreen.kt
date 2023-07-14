@@ -84,7 +84,6 @@ fun DetailScreen(
                 LazyColumn(
                     modifier = Modifier
                         .wrapContentHeight(),
-
                     contentPadding = PaddingValues(10.dp)
                 ) {
                     item {
@@ -92,12 +91,19 @@ fun DetailScreen(
                         /* Logo */
                         Spacer(modifier = Modifier.height(15.dp))
                         Row(
-                            modifier = Modifier.fillMaxWidth(),
+                            modifier = Modifier
+                                .fillMaxWidth(),
                             horizontalArrangement = Arrangement.Center
                         ) {
                             AsyncImage(
                                 model = "${coin.logo}",
                                 contentDescription = null,
+                                modifier = Modifier
+                                    .background(
+                                        MaterialTheme.colorScheme.surface,
+                                        RoundedCornerShape(5.dp)
+                                    )
+                                    .padding(10.dp)
                             )
                         }
 

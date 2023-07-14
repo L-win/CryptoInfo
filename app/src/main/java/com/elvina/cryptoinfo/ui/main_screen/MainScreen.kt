@@ -57,7 +57,7 @@ fun MainScreen(
                     titleContentColor = MaterialTheme.colorScheme.onPrimary,
                 ),
                 actions = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = { /*TODO*/ }, enabled = false) {
                         Icon(
                             imageVector = Icons.Filled.Search,
                             contentDescription = "search",
