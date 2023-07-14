@@ -1,6 +1,5 @@
 package com.elvina.cryptoinfo.ui.detail_screen.components
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -8,9 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -25,16 +21,13 @@ fun DetailExtra(coin: CoinDetail) {
 
     /* TODO: started */
     /* TODO: rank */
-
     /* TODO: hash */
     /* TODO: proof */
-
     /* TODO: open source */
     /* TODO: organization */
 
+    /* Started at, Rank, Open Source*/
 
-    /* Started at*/
-    /* Rank */
     Spacer(modifier = Modifier.height(15.dp))
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -57,7 +50,7 @@ fun DetailExtra(coin: CoinDetail) {
             )
         }
 
-        Column{
+        Column {
             Text(
                 text = "Rank",
                 textAlign = TextAlign.Center,
@@ -69,27 +62,58 @@ fun DetailExtra(coin: CoinDetail) {
                 text = "${coin.rank}",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
+            )
+        }
+
+        Column {
+            Text(
+                text = "Open Source",
+                textAlign = TextAlign.Center,
+                fontSize = 16.sp,
+                fontWeight = FontWeight(16)
+            )
+
+            Text(
+                text = if (coin.open_source == true) "Yes" else "No",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(15.dp),
+                textAlign = TextAlign.Center,
             )
         }
 
     }
 
-    /* Hash */
-    /* Proof */
-    Spacer(modifier = Modifier.height(15.dp))
-    Row {
-        Text(text = "${coin.hash}")
-        Spacer(modifier = Modifier.width(15.dp))
-        Text(text = "${coin.proof}")
-    }
+    /* Hash, Proof, Organization*/
 
-    /* Open source */
-    /* Organization */
     Spacer(modifier = Modifier.height(15.dp))
-    Row {
-        Text(text = "${coin.open_source}")
-        Spacer(modifier = Modifier.width(15.dp))
-        Text(text = "${coin.organization}")
+    Column(modifier = Modifier.padding(10.dp)) {
+        Text(
+            text = "Hash Algorithm",
+            textAlign = TextAlign.Center,
+            fontSize = 16.sp,
+            fontWeight = FontWeight(16)
+        )
+        Text(text = "${coin.hash}", modifier = Modifier.padding(5.dp))
+
+        Spacer(modifier = Modifier.height(15.dp))
+        Text(
+            text = "Proof Type",
+            textAlign = TextAlign.Center,
+            fontSize = 16.sp,
+            fontWeight = FontWeight(16)
+        )
+        Text(text = "${coin.proof}", modifier = Modifier.padding(5.dp))
+
+        Spacer(modifier = Modifier.height(15.dp))
+        Text(
+            text = "Organization",
+            textAlign = TextAlign.Center,
+            fontSize = 16.sp,
+            fontWeight = FontWeight(16)
+        )
+        Text(text = "${coin.organization}", modifier = Modifier.padding(5.dp))
     }
 
 }
