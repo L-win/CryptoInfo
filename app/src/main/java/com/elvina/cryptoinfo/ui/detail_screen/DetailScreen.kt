@@ -18,7 +18,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -124,7 +123,7 @@ fun DetailScreen(
                         }
 
                         /* Description */
-                        Spacer(modifier = Modifier.height(15.dp))
+//                        Spacer(modifier = Modifier.height(15.dp))
 //                        Text(
 //                            text = "Description",
 //                            fontSize = 16.sp,
@@ -162,7 +161,6 @@ fun DetailScreen(
                                 .fillMaxWidth()
                                 .padding(10.dp)
                         )
-                        Divider()
                     }
                 }
 

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -18,13 +19,6 @@ import com.elvina.cryptoinfo.domain.model.CoinDetail
 
 @Composable
 fun DetailExtra(coin: CoinDetail) {
-
-    /* TODO: started */
-    /* TODO: rank */
-    /* TODO: hash */
-    /* TODO: proof */
-    /* TODO: open source */
-    /* TODO: organization */
 
     /* Started at, Rank, Open Source*/
 
@@ -85,6 +79,8 @@ fun DetailExtra(coin: CoinDetail) {
 
     }
 
+    Divider()
+
     /* Hash, Proof, Organization*/
 
     Spacer(modifier = Modifier.height(15.dp))
@@ -115,5 +111,7 @@ fun DetailExtra(coin: CoinDetail) {
         )
         Text(text = "${coin.organization}", modifier = Modifier.padding(5.dp))
     }
+
+    Divider()
 
 }
