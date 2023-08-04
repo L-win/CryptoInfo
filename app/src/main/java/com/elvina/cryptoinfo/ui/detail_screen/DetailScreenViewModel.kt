@@ -28,8 +28,8 @@ class DetailScreenViewModel @Inject constructor(
             getCoin(coinId)
         }
 
-        savedStateHandle.get<String>(Constants.COIN_SYMBOL)?.let {
-                symbol-> coinSymbol = symbol
+        savedStateHandle.get<String>(Constants.COIN_SYMBOL)?.let { symbol ->
+            coinSymbol = symbol
         }
     }
 
@@ -41,9 +41,7 @@ class DetailScreenViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
-                    _state.value = DetailScreenState(
-                        error = result.message ?: "An uexpected error occured"
-                    )
+                    _state.value = DetailScreenState(error = result.message ?: "An uexpected error occured")
                 }
 
                 is Resource.Loading -> {
