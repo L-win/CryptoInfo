@@ -122,13 +122,6 @@ fun DetailScreen(
                             )
                         }
 
-                        /* Description */
-//                        Spacer(modifier = Modifier.height(15.dp))
-//                        Text(
-//                            text = "Description",
-//                            fontSize = 16.sp,
-//                            fontWeight = FontWeight(12)
-//                        )
                         Spacer(modifier = Modifier.height(15.dp))
                         Text(
                             modifier = Modifier

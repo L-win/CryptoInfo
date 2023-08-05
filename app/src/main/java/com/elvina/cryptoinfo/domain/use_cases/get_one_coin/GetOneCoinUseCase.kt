@@ -1,8 +1,6 @@
 package com.elvina.cryptoinfo.domain.use_cases.get_one_coin
 
-import com.elvina.cryptoinfo.data.remote.dto.toCoin
 import com.elvina.cryptoinfo.data.remote.dto.toCoinDetail
-import com.elvina.cryptoinfo.domain.model.Coin
 import com.elvina.cryptoinfo.domain.model.CoinDetail
 import com.elvina.cryptoinfo.domain.repository.CoinRepository
 import com.elvina.cryptoinfo.other.Resource

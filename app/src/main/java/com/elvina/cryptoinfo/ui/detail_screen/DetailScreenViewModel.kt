@@ -4,7 +4,6 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.elvina.cryptoinfo.domain.use_cases.get_one_coin.GetOneCoinUseCase
 import com.elvina.cryptoinfo.other.Constants
