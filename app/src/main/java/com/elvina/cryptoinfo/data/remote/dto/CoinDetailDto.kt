@@ -12,8 +12,6 @@ data class CoinDetailDto(
     val is_active: Boolean,
     val is_new: Boolean,
     val last_data_at: String,
-    val links: Links,
-    val links_extended: List<LinksExtended>,
     val logo: String,
     val message: String,
     val name: String,
@@ -26,7 +24,6 @@ data class CoinDetailDto(
     val tags: List<Tag>,
     val team: List<TeamMember>,
     val type: String,
-    val whitepaper: Whitepaper
 )
 
 fun CoinDetailDto.toCoinDetail(): CoinDetail {

@@ -1,13 +1,13 @@
 package com.elvina.cryptoinfo.data.repository
 
-import com.elvina.cryptoinfo.data.remote.CoinPaprikaAPI
+import com.elvina.cryptoinfo.data.remote.API
 import com.elvina.cryptoinfo.data.remote.dto.CoinDetailDto
 import com.elvina.cryptoinfo.data.remote.dto.CoinDto
 import com.elvina.cryptoinfo.domain.repository.CoinRepository
 import javax.inject.Inject
 
 class CoinRepositoryImpl @Inject constructor(
-    private val api: CoinPaprikaAPI
+    private val api: API
 ) : CoinRepository {
 
     override suspend fun getCoins(): List<CoinDto> {

@@ -1,6 +1,6 @@
 package com.elvina.cryptoinfo.di
 
-import com.elvina.cryptoinfo.data.remote.CoinPaprikaAPI
+import com.elvina.cryptoinfo.data.remote.API
 import com.elvina.cryptoinfo.data.repository.CoinRepositoryImpl
 import com.elvina.cryptoinfo.domain.repository.CoinRepository
 import com.elvina.cryptoinfo.other.Constants
@@ -18,17 +18,17 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providePaprikaApi(): CoinPaprikaAPI{
+    fun providePaprikaApi(): API{
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(CoinPaprikaAPI::class.java)
+            .create(API::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideCoinRepository(api: CoinPaprikaAPI): CoinRepository{
+    fun provideCoinRepository(api: API): CoinRepository{
         return CoinRepositoryImpl(api)
     }
 }
