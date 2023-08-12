@@ -98,7 +98,7 @@ fun MainScreen(
                 )
             }
 
-            LazyColumn() {
+            LazyColumn {
                 items(state.coins) { coin ->
                     MainScreenItem(
                         coin = coin,

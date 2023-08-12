@@ -1,6 +1,5 @@
 package com.elvina.cryptoinfo.ui.detail_screen
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -41,7 +40,7 @@ import com.elvina.cryptoinfo.ui.Screen
 import com.elvina.cryptoinfo.ui.detail_screen.components.DetailExtra
 import com.elvina.cryptoinfo.ui.detail_screen.components.TeamListItem
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailScreen(
     navController: NavController,

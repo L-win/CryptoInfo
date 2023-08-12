@@ -20,7 +20,7 @@ class GetAllCoinsUseCase @Inject constructor(
             val coins = repository.getCoins().map { it.toCoin() }
             emit(Resource.Success(coins.subList(0,15)))
         }catch(e: HttpException){
-            emit(Resource.Error(e.localizedMessage ?: "An error occured"))
+            emit(Resource.Error(e.localizedMessage ?: "An error occurred"))
         }catch (e: IOException){
             emit(Resource.Error("Couldn't reach server. Check internet connection."))
         }

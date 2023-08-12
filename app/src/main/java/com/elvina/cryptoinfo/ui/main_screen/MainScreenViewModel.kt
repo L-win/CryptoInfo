@@ -30,7 +30,7 @@ class MainScreenViewModel @Inject constructor(
                 }
                 is Resource.Error->{
                     _state.value = MainScreenState(
-                        error = result.message ?: "An uexpected error occured"
+                        error = result.message ?: "An unexpected error occurred"
                     )
                 }
                 is Resource.Loading->{

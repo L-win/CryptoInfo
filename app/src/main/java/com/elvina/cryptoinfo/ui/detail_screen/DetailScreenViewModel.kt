@@ -40,7 +40,7 @@ class DetailScreenViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
-                    _state.value = DetailScreenState(error = result.message ?: "An uexpected error occured")
+                    _state.value = DetailScreenState(error = result.message ?: "An unexpected error occurred")
                 }
 
                 is Resource.Loading -> {
