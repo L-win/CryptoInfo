@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.elvina.cryptoinfo.ui.detail_screen.DetailScreen
-import com.elvina.cryptoinfo.ui.main_screen.MainScreen
+import com.elvina.cryptoinfo.ui.detailscreen.DetailScreen
+import com.elvina.cryptoinfo.ui.mainscreen.MainScreen
 import com.elvina.cryptoinfo.ui.theme.CryptoInfoTheme
 import dagger.hilt.android.AndroidEntryPoint
 

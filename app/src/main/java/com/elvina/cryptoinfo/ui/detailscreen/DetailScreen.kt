@@ -1,4 +1,4 @@
-package com.elvina.cryptoinfo.ui.detail_screen
+package com.elvina.cryptoinfo.ui.detailscreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -37,8 +37,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.elvina.cryptoinfo.ui.Screen
-import com.elvina.cryptoinfo.ui.detail_screen.components.DetailExtra
-import com.elvina.cryptoinfo.ui.detail_screen.components.TeamListItem
+import com.elvina.cryptoinfo.ui.detailscreen.components.DetailExtra
+import com.elvina.cryptoinfo.ui.detailscreen.components.TeamListItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

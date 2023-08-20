@@ -1,4 +1,4 @@
-package com.elvina.cryptoinfo.ui.main_screen
+package com.elvina.cryptoinfo.ui.mainscreen
 
 import com.elvina.cryptoinfo.domain.model.Coin
 

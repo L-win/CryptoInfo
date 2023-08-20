@@ -1,4 +1,4 @@
-package com.elvina.cryptoinfo.ui.main_screen.components
+package com.elvina.cryptoinfo.ui.mainscreen.components
 
 
 import androidx.compose.foundation.background

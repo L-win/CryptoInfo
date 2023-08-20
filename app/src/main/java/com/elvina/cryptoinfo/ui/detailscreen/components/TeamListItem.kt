@@ -1,4 +1,4 @@
-package com.elvina.cryptoinfo.ui.detail_screen.components
+package com.elvina.cryptoinfo.ui.detailscreen.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

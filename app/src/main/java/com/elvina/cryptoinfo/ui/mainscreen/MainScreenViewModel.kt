@@ -1,10 +1,10 @@
-package com.elvina.cryptoinfo.ui.main_screen
+package com.elvina.cryptoinfo.ui.mainscreen
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.elvina.cryptoinfo.domain.use_cases.get_all_coins.GetAllCoinsUseCase
+import com.elvina.cryptoinfo.domain.usecases.GetAllCoinsUseCase
 import com.elvina.cryptoinfo.other.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn

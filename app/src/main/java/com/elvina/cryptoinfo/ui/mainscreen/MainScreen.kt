@@ -1,4 +1,4 @@
-package com.elvina.cryptoinfo.ui.main_screen
+package com.elvina.cryptoinfo.ui.mainscreen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,7 +27,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.elvina.cryptoinfo.ui.Screen
-import com.elvina.cryptoinfo.ui.main_screen.components.MainScreenItem
+import com.elvina.cryptoinfo.ui.mainscreen.components.MainScreenItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,11 +1,11 @@
-package com.elvina.cryptoinfo.ui.detail_screen
+package com.elvina.cryptoinfo.ui.detailscreen
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.elvina.cryptoinfo.domain.use_cases.get_one_coin.GetOneCoinUseCase
+import com.elvina.cryptoinfo.domain.usecases.GetOneCoinUseCase
 import com.elvina.cryptoinfo.other.Constants
 import com.elvina.cryptoinfo.other.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel

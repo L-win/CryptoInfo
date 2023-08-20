@@ -1,4 +1,4 @@
-package com.elvina.cryptoinfo.domain.use_cases.get_all_coins
+package com.elvina.cryptoinfo.domain.usecases
 
 import com.elvina.cryptoinfo.data.remote.dto.toCoin
 import com.elvina.cryptoinfo.domain.model.Coin
